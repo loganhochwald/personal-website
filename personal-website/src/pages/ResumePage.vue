@@ -1,6 +1,7 @@
 <template>
+  <q-page>
     <q-bar
-      class="bg-teal text-white full-width">
+      class="bg-secondary text-white full-width">
         <div class="cursor-pointer non-selectable">
           File
           <q-menu>
@@ -82,6 +83,12 @@
           />
       </q-bar>
 
+      <div class="bg-dark row justify-center text-white">
+      <q-spinner-audio color="secondary" size="7em" />
+      <div>I have not added my resume yet whoops</div>
+      <q-spinner-audio color="secondary" size="7em" />
+      </div>
+    </q-page>
 </template>
 
 <script>

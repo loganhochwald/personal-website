@@ -1,11 +1,18 @@
 <template>
-  <q-page class="top-left">
-    <ResumeIcon />
+  <q-page class="bg-dark">
+    <div class="q-pa-md">
+    <div class="row">
+      <div class="col">
+        <ResumeIcon />
+      </div>
+    </div>
+  </div>
   </q-page>
 </template>
 
 <script>
 import { defineComponent } from 'vue';
+
 import ResumeIcon from 'src/components/ResumeIcon.vue';
 
 export default defineComponent({
@@ -15,9 +22,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style scoped>
-.top-left {
-  min-height: auto; /* or adjust as needed */
-}
-</style>

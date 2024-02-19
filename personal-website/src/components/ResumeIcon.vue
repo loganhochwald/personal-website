@@ -2,8 +2,9 @@
     <q-btn
       to="/resume"
       stack
-      size="35px"
-      color="teal"
+      flat
+      style="color: #f9f9f9"
+      size="20px"
       icon="description"
       label="resume"
     />
