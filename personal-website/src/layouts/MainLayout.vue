@@ -1,86 +1,18 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-  <div class="q-pa-md">
-    <div class="row items-center">
-      <q-bar style="min-width: 250px;"
-      class="bg-teal text-white fixed-top full-width">
-        <div class="cursor-pointer non-selectable">
-          File
-          <q-menu>
-            <q-list dense style="min-width: 100px">
-              <q-item clickable v-close-popup>
-                <q-item-section>Open...</q-item-section>
-              </q-item>
-              <q-item clickable v-close-popup>
-                <q-item-section>New</q-item-section>
-              </q-item>
-              <q-separator />
-              <q-item clickable>
-                <q-item-section>Preferences</q-item-section>
-                <q-item-section side>
-                  <q-icon name="keyboard_arrow_right" />
-                </q-item-section>
+    <q-header>
+    <q-toolbar class="bg-primary text-white">
+      <q-avatar >
+      <img src="https://cdn.quasar.dev/img/avatar.png">
+    </q-avatar>
 
-                <q-menu anchor="top end" self="top start">
-                  <q-list dense>
-                    <q-item
-                      v-for="n in 3"
-                      :key="n"
-                      clickable
-                    >
-                      <q-item-section>Submenu Label</q-item-section>
-                      <q-item-section side>
-                        <q-icon name="keyboard_arrow_right" />
-                      </q-item-section>
-                      <q-menu auto-close anchor="top end" self="top start">
-                        <q-list dense>
-                          <q-item
-                            v-for="n in 3"
-                            :key="n"
-                            clickable
-                          >
-                            <q-item-section>3rd level Label</q-item-section>
-                          </q-item>
-                        </q-list>
-                      </q-menu>
-                    </q-item>
-                  </q-list>
-                </q-menu>
+      <q-toolbar-title>Logan Hochwald</q-toolbar-title>
 
-              </q-item>
-              <q-separator />
-              <q-item clickable v-close-popup>
-                <q-item-section>Quit</q-item-section>
-              </q-item>
-            </q-list>
-          </q-menu>
-        </div>
-        <div class="cursor-pointer non-selectable">Edit
-          <q-menu>
-            <q-list dense style="min-width: 100px">
-              <q-item clickable v-close-popup>
-                <q-item-section>Cut</q-item-section>
-              </q-item>
-              <q-item clickable v-close-popup>
-                <q-item-section>Copy</q-item-section>
-              </q-item>
-              <q-item clickable v-close-popup>
-                <q-item-section>Paste</q-item-section>
-              </q-item>
-              <q-separator />
-              <q-item clickable v-close-popup>
-                <q-item-section>Select All</q-item-section>
-              </q-item>
-            </q-list>
-          </q-menu>
-        </div>
-        <q-space />
-        <q-btn dense flat icon="minimize" />
-        <q-btn dense flat icon="crop_square" />
-        <q-btn dense flat icon="close" />
-      </q-bar>
-    </div>
-  </div>
+      <div>{{ time }}</div>
+      <q-btn dense flat icon="battery_charging_full" />
+      <q-btn dense flat icon="wifi" />
+    </q-toolbar>
+  </q-header>
 
     <q-page-container>
       <router-view />
@@ -89,7 +21,7 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
   name: 'MainLayout',
@@ -99,15 +31,15 @@ export default defineComponent({
   },
 
   setup() {
-    // const leftDrawerOpen = ref(false);
+    const time = ref('');
 
-    // return {
-    //   essentialLinks: linksList,
-    //   leftDrawerOpen,
-    //   toggleLeftDrawer() {
-    //     leftDrawerOpen.value = !leftDrawerOpen.value;
-    //   },
-    // };
+    setInterval(() => {
+      const currentTime = new Date();
+      const formattedTime = currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      time.value = formattedTime;
+    }, 1000);
+
+    return { time };
   },
 });
 </script>

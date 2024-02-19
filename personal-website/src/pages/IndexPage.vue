@@ -15,3 +15,9 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped>
+.top-left {
+  min-height: auto; /* or adjust as needed */
+}
+</style>

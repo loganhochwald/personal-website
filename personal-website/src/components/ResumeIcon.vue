@@ -1,5 +1,6 @@
 <template>
     <q-btn
+      to="/resume"
       stack
       size="35px"
       color="teal"
