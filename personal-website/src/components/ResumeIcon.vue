@@ -1,8 +1,10 @@
 <template>
     <q-btn
+      stack
       size="35px"
       color="teal"
       icon="description"
+      label="resume"
     />
 </template>
 
