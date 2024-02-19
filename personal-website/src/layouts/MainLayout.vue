@@ -3,7 +3,7 @@
     <q-header>
     <q-toolbar class="bg-primary text-white">
       <q-avatar >
-      <img src="https://cdn.quasar.dev/img/avatar.png">
+      <img src="https://media.licdn.com/dms/image/D5603AQHrfmVRT8B_Jw/profile-displayphoto-shrink_200_200/0/1688958122279?e=2147483647&v=beta&t=qKpsYL3SlMZ2tTvj3m_2gnmyTeByGnvXZzl9LSrXxo0">
     </q-avatar>
 
       <q-toolbar-title>Logan Hochwald</q-toolbar-title>
